@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Attendance System</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="style.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Attendance Tracker</h1>
+    <p>Student Attendance Management System</p>
+    <p>Kogi State Polytechnic</p>
+</header>
+
+<main class="container">
+
+    <!-- DASHBOARD -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <h2 id="studentTotal">0</h2>
+            <p>Total Students</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="courseTotal">0</h2>
+            <p>Course Sessions</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="presentTotal">0</h2>
+            <p>Present in Selected Session</p>
+        </div>
+
+    </section>
+
+
+    <!-- REGISTER STUDENTS -->
+    <section class="panel">
+
+        <h3>Student Registration</h3>
+
+        <form id="studentForm">
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter student name"
+                required
+            >
+
+            <input
+                type="text"
+                id="matricNumber"
+                placeholder="Enter matric number"
+                required
+            >
+
+            <button type="submit">Add Student</button>
+
+        </form>
+
+        <p id="studentMessage"></p>
+
+    </section>
+
+
+    <!-- CREATE COURSE -->
+    <section class="panel">
+
+        <h3>Create Course Session</h3>
+
+        <form id="courseForm">
+
+            <input
+                type="text"
+                id="courseCode"
+                placeholder="Course code e.g. SWD 413"
+                required
+            >
+
+            <input
+                type="text"
+                id="courseTitle"
+                placeholder="Course topic / title"
+                required
+            >
+
+            <input
+                type="date"
+                id="courseDate"
+                required
+            >
+
+            <button type="submit">Create Course</button>
+
+        </form>
+
+        <p id="courseMessage"></p>
+
+    </section>
+
+
+    <!-- COURSE CARDS -->
+    <section class="panel">
+
+        <h3>Available Course Sessions</h3>
+
+        <div id="courseCards" class="course-grid">
+
+            <p class="empty">No course sessions created yet.</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ATTENDANCE REGISTER -->
+    <section class="panel">
+
+        <div class="register-heading">
+
+            <div>
+                <h3 id="selectedCourse">
+                    Attendance Register
+                </h3>
+
+                <p id="selectedDate">
+                    Select a course session.
+                </p>
+            </div>
+
+            <button id="saveButton" type="button">
+                Save Attendance
+            </button>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Student Name</th>
+                        <th>Matric Number</th>
+                        <th>Present</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceList">
+
+                    <tr>
+                        <td colspan="4" class="empty">
+                            Select a course to display students.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="attendance-summary">
+
+            <p>Present: <strong id="presentCount">0</strong></p>
+
+            <p>Absent: <strong id="absentCount">0</strong></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STUDENT LIST -->
+    <section class="panel">
+
+        <h3>Registered Students</h3>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Student Name</th>
+                        <th>Matric Number</th>
+                    </tr>
+                </thead>
+
+                <tbody id="registeredStudents"></tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>AttendTrack © 2026</p>
+</footer>
+
+</body>
+</html>
